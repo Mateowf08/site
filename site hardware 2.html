@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <title>HARDWARE STORE</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.jpg">
+
+    <!-- CSS perso -->
+    <link rel="stylesheet" href="./CSS/style.css">
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    >
+
+    <!-- Swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+      /* Swiper custom */
+      .swiper {
+        width: 100%;
+        height: 100vh;
+      }
+      .swiper-slide {
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .carousel-caption {
+        background: rgba(0, 0, 0, 0.6);
+        padding: 20px;
+        border-radius: 15px;
+        color: white;
+        text-align: center;
+        animation: fadeInUp 1s ease-in-out;
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .mycard {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .mycard:hover {
+        transform: translateY(-10px);
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+      }
+      footer a {
+        transition: 0.3s;
+      }
+      footer a:hover {
+        color: #28a745;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">
+          <img src="logo.jpg" class="rounded" height="50" width="60" alt="Logo">
+          HARDWARE STORE
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#Navbar"
+        >
+          <span class="fas fa-bars fa-lg"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="Navbar">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active"><a class="nav-link" href="./index.html"><span class="fa fa-home fa-lg"></span> Accueil</a></li>
+            <li class="nav-item"><a class="nav-link" href="./aboutus.html"><span class="fa fa-info fa-lg"></span> Informations</a></li>
+            <li class="nav-item"><a class="nav-link" href="#components"><span class="fas fa-microchip fa-lg"></span> Composants</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
+          </ul>
+
+          <!-- Barre de recherche -->
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Rechercher un composant...">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Carousel Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <!-- CPU -->
+        <div class="swiper-slide" style="background-image: url('image processeur.jpg');">
+          <div class="carousel-caption">
+            <h1>Les Processeurs</h1>
+            <p>Boostez la puissance de votre PC avec les dernières générations de CPU.</p>
+            <a href="#components" class="btn btn-success">Découvrir</a>
+          </div>
+        </div>
+
+        <!-- GPU -->
+        <div class="swiper-slide" style="background-image: url('GPU.jpg');">
+          <div class="carousel-caption">
+            <h1>Cartes Graphiques</h1>
+            <p>La puissance pour vos jeux et vos créations graphiques.</p>
+            <a href="#components" class="btn btn-success">Voir plus</a>
+          </div>
+        </div>
+
+        <!-- RAM -->
+        <div class="swiper-slide" style="background-image: url('ktc-content-blog-gaming-the-ultimate-ram-guide-for-gamers-fury.jpg');">
+          <div class="carousel-caption">
+            <h1>Mémoire RAM</h1>
+            <p>Accélérez vos applications et vos jeux grâce à une RAM performante.</p>
+            <a href="#components" class="btn btn-success">Explorer</a>
+          </div>
+        </div>
+
+        <!-- SSD -->
+        <div class="swiper-slide" style="background-image: url('HDD_VS_SSD.width-1000.format-webp.webp');">
+          <div class="carousel-caption">
+            <h1>Stockage SSD</h1>
+            <p>Profitez de vitesses de lecture et d’écriture incroyables.</p>
+            <a href="#components" class="btn btn-success">Explorer</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination & Navigation -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+    <!-- Section A propos -->
+    <section class="container text-center mt-5">
+      <h2>À propos de HARDWARE STORE</h2>
+      <p class="lead">
+        Nous sommes spécialisés dans la vente de composants informatiques : processeurs, cartes graphiques, mémoire vive et solutions de stockage.
+        Que vous soyez gamer, créateur ou professionnel, nous avons les composants adaptés à vos besoins !
+      </p>
+    </section>
+
+    <!-- Cards composants -->
+    <div class="container mt-4" id="components">
+      <div class="row">
+        <!-- CPU -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="card mycard">
+            <img class="card-img-top" src="image processeur.jpg" alt="CPU">
+            <div class="card-body">
+              <h5 class="card-title">CPU</h5>
+              <p class="card-text">Le cerveau de l’ordinateur, indispensable pour la performance.</p>
+              <button class="btn btn-success" data-toggle="modal" data-target="#cpuModal">Voir</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- GPU -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="card mycard">
+            <img class="card-img-top" src="GPU.jpg" alt="GPU">
+            <div class="card-body">
+              <h5 class="card-title">GPU</h5>
+              <p class="card-text">La carte graphique pour jouer et créer en haute résolution.</p>
+              <button class="btn btn-success" data-toggle="modal" data-target="#gpuModal">Voir</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- RAM -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="card mycard">
+            <img class="card-img-top" src="ktc-content-blog-gaming-the-ultimate-ram-guide-for-gamers-fury.jpg" alt="RAM">
+            <div class="card-body">
+              <h5 class="card-title">RAM</h5>
+              <p class="card-text">La mémoire vive qui accélère vos logiciels et jeux.</p>
+              <button class="btn btn-success" data-toggle="modal" data-target="#ramModal">Voir</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SSD -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="card mycard">
+            <img class="card-img-top" src="HDD_VS_SSD.width-1000.format-webp.webp" alt="SSD">
+            <div class="card-body">
+              <h5 class="card-title">SSD</h5>
+              <p class="card-text">Un stockage rapide et silencieux pour vos données.</p>
+              <button class="btn btn-success" data-toggle="modal" data-target="#ssdModal">Voir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal fade" id="cpuModal" tabindex="-1">
+      <div class="modal-dialog"><div class="modal-content">
+        <div class="modal-header"><h5 class="modal-title">CPU</h5></div>
+        <div class="modal-body">Les processeurs modernes offrent des vitesses incroyables, idéales pour les jeux, la création et le multitâche.</div>
+      </div></div>
+    </div>
+
+    <div class="modal fade" id="gpuModal" tabindex="-1">
+      <div class="modal-dialog"><div class="modal-content">
+        <div class="modal-header"><h5 class="modal-title">GPU</h5></div>
+        <div class="modal-body">Les cartes graphiques haut de gamme permettent de jouer en 4K et de travailler sur des projets 3D complexes.</div>
+      </div></div>
+    </div>
+
+    <div class="modal fade" id="ramModal" tabindex="-1">
+      <div class="modal-dialog"><div class="modal-content">
+        <div class="modal-header"><h5 class="modal-title">RAM</h5></div>
+        <div class="modal-body">La RAM stocke temporairement vos données pour accélérer l’exécution des programmes.</div>
+      </div></div>
+    </div>
+
+    <div class="modal fade" id="ssdModal" tabindex="-1">
+      <div class="modal-dialog"><div class="modal-content">
+        <div class="modal-header"><h5 class="modal-title">SSD</h5></div>
+        <div class="modal-body">Les SSD offrent une vitesse de lecture/écriture bien supérieure aux disques durs traditionnels.</div>
+      </div></div>
+    </div>
+
+    <!-- Section Contact -->
+    <section class="container mt-5" id="contact">
+      <h2 class="text-center">Contactez-nous</h2>
+      <p class="text-center lead">Une question ? Besoin d’un conseil ? Remplissez le formulaire ci-dessous :</p>
+
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <form>
+            <div class="form-group">
+              <label for="name">Nom</label>
+              <input type="text" class="form-control" id="name" placeholder="Votre nom" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Adresse Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Votre email" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea class="form-control" id="message" rows="5" placeholder="Votre message..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-success btn-block">Envoyer</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+      <p>© 2025 HARDWARE STORE - Tous droits réservés</p>
+      <p>
+        <a href="#" class="text-white mr-2"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="text-white mr-2"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+      </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        loop: true,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        effect: "fade",
+        speed: 1000,
+      });
+    </script>
+  </body>
+</html>
+
+
+
